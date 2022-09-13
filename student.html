@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration : Civil Second Year</div>
+    <div class="content">
+      <form action="Post" name="google-sheet">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="Name" placeholder="Enter your name" required>
+          </div>
+         <div class="input-box">
+            <span class="details">Father's Name</span>
+            <input type="text" name="FatherName"placeholder="Enter your father's name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mother's Name</span>
+            <input type="text" name="MotherName" placeholder="Enter your mother's name" required>
+          </div>
+        
+        <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="Email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="Number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Alternate Phone Number</span>
+            <input type="number" name="AltNumber" placeholder="Enter your guardian number" required>
+          </div>
+          
+
+       <div class="input-box">
+            <span class="details">Enrollment No.</span>
+            <input type="text" name="Enroll" placeholder="Enter your enrollment no." required>
+          </div>
+       <div class="input-box">
+            <span class="details">Roll No.</span>
+            <input type="text" name="Roll" placeholder="Enter your class roll no." required>
+          </div>
+         
+       <div class="input-box">
+            <span class="details">D.O.B</span>
+            <input type="text" name="DOB" placeholder="DD/MM/YYYY" required>
+          </div>
+        <div class="input-box">
+            <span class="details">Adhar Number</span>
+            <input type="number" name="Adhar" placeholder="Enter your adhar number" required>
+          </div>
+  <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="Male">
+          <input type="radio" name="gender" id="dot-2" value="Female">
+          <input type="radio" name="gender" id="dot-3" value="Other">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+
+            <span class="gender">Prefer not to say</span>
+            </label>
+            </div>
+        </div>
+     </div>
+    
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    
+  </div>
+
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxCKRFEDevqvEGWiRV9yNtzfaipH1Hz6fYi1kgJojilEOeHW0j95JgBS0bmZJtKN78/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert(window.location.href='https://www.snpolypay.in/'))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+
+
+</body>
+</html>
